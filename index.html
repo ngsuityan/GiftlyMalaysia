@@ -1,0 +1,721 @@
+<html><head><base href="." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Gift Cards | Your Digital Gifting Solution</title>
+  <link rel="shortcut icon" href="./images/logo.ico" type="image/x-icon">
+  <style>
+  :root {
+    --primary: #7C3AED;
+    --secondary: #4338CA;
+    --dark: #111827;
+    --light: #F3F4F6;
+    --accent: #10B981;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    background-color: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  nav {
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--accent);
+  }
+  
+  .hero {
+    padding: 8rem 0 4rem;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #9CA3AF;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .features {
+    padding: 4rem 0;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+  }
+  
+  .feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--accent);
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+  
+  .floating-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .pricing {
+    padding: 4rem 0;
+  }
+  
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .price-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .price-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .price-card h2 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  
+  .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: var(--light);
+  }
+  
+  .price span {
+    font-size: 1rem;
+    color: #9CA3AF;
+  }
+  
+  .features-list {
+    list-style: none;
+    margin: 2rem 0;
+  }
+  
+  .features-list li {
+    margin: 0.5rem 0;
+    color: #9CA3AF;
+  }
+  
+  .contact {
+    padding: 4rem 0;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  
+  .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-form {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: grid;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    color: var(--accent);
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--light);
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  
+  .submit-btn {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .footer {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 3rem 0;
+    margin-top: 4rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .social-link {
+    color: var(--light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-link:hover {
+    color: var(--accent);
+  }
+  
+  .social-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .gallery {
+    padding: 4rem 0;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  
+  .carousel-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .gallery-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .gallery-item {
+    position: relative;
+    min-width: 100%;
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gallery-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+  
+  .gallery-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+  
+  .gallery-description {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+  
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  .prev-arrow {
+    left: 20px;
+  }
+  
+  .next-arrow {
+    right: 20px;
+  }
+  
+  .carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 20;
+  }
+  
+  .indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .indicator.active {
+    background: var(--accent);
+    transform: scale(1.2);
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-img {
+      height: 300px;
+    }
+    
+    .carousel-arrow {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+    }
+  }
+  
+  .footer-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .footer-info p {
+    margin: 0.5rem 0;
+  }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <div class="container nav-content">
+        <div class="logo">Giftly Malaysia</div>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+  
+    <section class="hero">
+      <div class="container">
+        <h1>Buy Malaysia Roblox Gift Cards Online</h1>
+        <p>Instantly purchase and send unique Malaysia Roblox gift cards with exclusive rewards, accessible worldwide. Perfect for gifting gamers with rare Malaysian benefits.</p>
+        <a href="#contact" class="cta-button">Shop Roblox Gift Cards</a>
+      </div>
+    </section>
+  
+    <section class="features" id="features">
+      <div class="container">
+        <div class="features-grid">
+          
+          <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#10B981" stroke-width="2"/>
+              <path d="M8 12L11 15L16 9" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3>Instant Digital Delivery</h3>
+            <p>Receive your Malaysia Roblox gift card instantly via email or SMS, ready for quick use or gifting.</p>
+          </div>
+  
+          <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.24 12.24C21.3658 11.1142 21.9983 9.58722 21.9983 7.99504C21.9983 6.40285 21.3658 4.87588 20.24 3.75004C19.1142 2.62419 17.5872 1.9917 15.995 1.9917C14.4028 1.9917 12.8758 2.62419 11.75 3.75004L5 10.5V19H13.5L20.24 12.24Z" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3>Secure Purchase</h3>
+            <p>We accept payments via PayPal and Wise, ensuring a smooth and reliable transaction process.</p>
+          </div>
+  
+          <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 15C15.866 15 19 11.866 19 8C19 4.13401 15.866 1 12 1C8.13401 1 5 4.13401 5 8C5 11.866 8.13401 15 12 15Z" stroke="#10B981" stroke-width="2"/>
+              <path d="M12 15V23M8 19H16" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <h3>Exclusive Malaysian Bonuses</h3>
+            <p>Unlock exclusive rewards with Malaysia Roblox gift cards. Perfect for players seeking unique perks.</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  
+  
+    <section class="gallery">
+      <div class="container">
+        <div class="carousel-container">
+          <button class="carousel-arrow prev-arrow">❮</button>
+          <div class="gallery-track">
+            <div class="gallery-item">
+              <img src="./images/1.jpg" alt="Happy customer with Roblox gift card redemption" class="gallery-img">
+              <div class="gallery-content">
+                <h3 class="gallery-title">Malaysia Roblox Gift Card</h3>
+                <p class="gallery-description">We provide real purchase Roblox gift card instantly</p>
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <img src="images/2.jpg" alt="PlayStation Network gift card purchase confirmation" class="gallery-img">
+              <div class="gallery-content">
+                <h3 class="gallery-title">7-11 Puchased Proof</h3>
+                <p class="gallery-description">Instant delivery together with Legit Receipt!</p>
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <img src="./images/3.jpg" alt="Steam wallet code redemption success" class="gallery-img">
+              <div class="gallery-content">
+                <h3 class="gallery-title">Real Conversation with Client</h3>
+                <p class="gallery-description">Clients received their digital code within 24 hrs!</p>
+              </div>
+            </div>
+            
+          </div>
+          <button class="carousel-arrow next-arrow">❯</button>
+          <div class="carousel-indicators"></div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="pricing-grid">
+          <div class="price-card">
+            <h2>Roblox Gift Card RM50</h2>
+            <div class="price">$20</div>
+            <ul class="features-list">
+              <li>Instant Digital Delivery</li>
+              <li>Attached With 7-11 Legit Receipt</li>
+              <li>24/7 Support</li>
+              <li>Paypal/Wise Payment Method</li>
+            </ul>
+            <a href="#contact" class="cta-button">Buy Now</a>
+          </div>
+          
+          <div class="price-card">
+            <h2>Others Malaysia Gift Card</h2>
+            <div class="price">$20<span> - $100</span></div>
+            <ul class="features-list">
+              <li>Instant Digital Delivery</li>
+              <li>Attached With Legit Receipt</li>
+              <li>24/7 Support</li>
+              <li>Any Malaysia Gift Card</li>
+            </ul>
+            <a href="#contact" class="cta-button">Inquiry Now</a>
+          </div>
+          
+          <!-- <div class="price-card">
+            <h2>Steam Gift Card</h2>
+            <div class="price">$20<span> - $100</span></div>
+            <ul class="features-list">
+              <li>Instant Digital Delivery</li>
+              <li>Steam Wallet Credit</li>
+              <li>Huge Game Selection</li>
+              <li>Special Offers Access</li>
+            </ul>
+            <a href="#contact" class="cta-button">Buy Now</a>
+          </div> -->
+        </div>
+      </div>
+    </section>
+  
+    <!-- <section class="contact" id="contact">
+      <div class="container contact-container">
+        <h2>Contact Us</h2>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section> -->
+
+    <section class="contact" id="contact">
+      <div class="container contact-container">
+        <h2>Contact Me</h2><br>
+        <p>If you have any questions or are interested in purchasing a Malaysia Roblox gift card, please reach out via email at <a
+          href="mailto:ngsuityan98@gmail.com" style="color: #00aaff;">ngsuityan98@gmail.com</a>. << Click here to send email instantly!!</p> <br>
+        <p>I'm here to help and will respond as quickly as possible!</p>
+      </div>
+    </section>
+    
+  
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>Athernative Contact for Gift Card Purchase Via Following Platform: </p> <br>
+          <a href="mailto:ngsuityan98@gmail.com" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Email
+          </a>
+          <a href="https://t.me/ahmiao" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21.68 3.06L2.32 10.59c-1.32.51-1.31 1.26-.24 1.59l4.93 1.54l11.46-7.23c.54-.33 1.03-.15.63.21l-9.27 8.38l-.35 5.31c.51 0 .74-.23 1.02-.51l2.45-2.38l5.09 3.76c.94.52 1.61.25 1.84-.87l3.34-15.74c.34-1.37-.52-1.99-1.54-1.59z"/>
+            </svg>
+            Telegram
+          </a>
+          <a href="https://instagram.com/ahmiao77" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="https://wa.me/+60103750714?text=I'm%20interested%20in%20buying%20Roblox%20Gift%20Card" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+        <div class="footer-info" style="text-align: center; margin-top: 2rem; color: #9CA3AF; font-size: 0.9rem;">
+          <p>© 2024 Giftly Malaysia. All rights reserved.</p>
+          <p>Need help? Contact me anytime for support and assistance.</p>
+          <p>Secure payments • Instant delivery • 100% satisfaction guaranteed</p>
+        </div>
+      </div>
+    </footer>
+  
+    <script>
+      // Add smooth scrolling to all links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+  
+      // Add scroll animation to feature cards
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('floating-animation');
+          }
+        });
+      });
+  
+      document.querySelectorAll('.feature-card').forEach((card) => {
+        observer.observe(card);
+      });
+  
+      // Carousel functionality
+      const track = document.querySelector('.gallery-track');
+      const items = document.querySelectorAll('.gallery-item');
+      const prevButton = document.querySelector('.prev-arrow');
+      const nextButton = document.querySelector('.next-arrow');
+  
+      let currentIndex = 0;
+      let interval;
+  
+      // Create indicators
+      const indicatorContainer = document.querySelector('.carousel-indicators');
+      items.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('indicator');
+        if (index === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => {
+          moveToSlide(index);
+          stopAutoSlide();
+          startAutoSlide();
+        });
+        indicatorContainer.appendChild(indicator);
+      });
+  
+      function moveToSlide(index) {
+        if (index < 0) {
+          index = items.length - 1;
+        } else if (index >= items.length) {
+          index = 0;
+        }
+        currentIndex = index;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update indicators
+        document.querySelectorAll('.indicator').forEach((indicator, i) => {
+          indicator.classList.toggle('active', i === currentIndex);
+        });
+      }
+  
+      function nextSlide() {
+        moveToSlide(currentIndex + 1);
+      }
+  
+      function prevSlide() {
+        moveToSlide(currentIndex - 1);
+      }
+  
+      // Auto-slide functionality
+      function startAutoSlide() {
+        interval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+      }
+  
+      function stopAutoSlide() {
+        clearInterval(interval);
+      }
+  
+      // Event listeners
+      prevButton.addEventListener('click', () => {
+        prevSlide();
+        stopAutoSlide();
+        startAutoSlide();
+      });
+  
+      nextButton.addEventListener('click', () => {
+        nextSlide();
+        stopAutoSlide();
+        startAutoSlide();
+      });
+  
+      track.addEventListener('mouseenter', stopAutoSlide);
+      track.addEventListener('mouseleave', startAutoSlide);
+  
+      // Start auto-sliding
+      startAutoSlide();
+      
+    </script>
+  </body>
+  </html>
